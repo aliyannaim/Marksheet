@@ -1,0 +1,67 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #3fb6b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .marksheet {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+  }
+  
+  .marksheet h2 {
+    margin-bottom: 20px;
+    color: #d47100;
+  }
+  
+  input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  .calculate-btn {
+    background: #e06d02;
+    color: white;
+  }
+  
+  .calculate-btn:hover {
+    background: #749266; 
+  }
+  
+  .clear-btn {
+    background: #e06d02;; 
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .clear-btn:hover {
+    background: #749266; 
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+  }
+  

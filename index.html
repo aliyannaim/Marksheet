@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="marksheet">
+        <h2>STUDENT MARKSHEET</h2>
+        <input type="text" id="name" placeholder="Enter Student Name">
+        <input type="number" id="english" placeholder="English Marks">
+        <input type="number" id="math" placeholder="Math Marks">
+        <input type="number" id="chemistry" placeholder="Chemistry Marks">
+        <input type="number" id="urdu" placeholder="Urdu Marks">
+        <input type="number" id="physics" placeholder="Physics Marks">
+       <div style="margin-top: 10px;">
+       <button class="calculate-btn" onclick="generateMarksheet()">Calculate</button>
+       <button class="clear-btn" onclick="clearMarksheet()">Clear</button>
+   </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function generateMarksheet() {
+            const name = document.getElementById('name').value;
+            const english = parseFloat(document.getElementById('english').value);
+            const math = parseFloat(document.getElementById('math').value);
+            const chemistry = parseFloat(document.getElementById('chemistry').value);
+            const urdu = parseFloat(document.getElementById('urdu').value);
+            const physics = parseFloat(document.getElementById('physics').value);
+
+            if (!name || isNaN(english) || isNaN(math) || isNaN(chemistry) || isNaN(urdu) || isNaN(physics)) {
+                alert('Please fill all fields correctly!');
+                return;
+            }
+
+            const total = english + math + chemistry + urdu + physics;
+            const percentage = (total / 550) * 100;
+
+            let grade = '';
+            if (percentage >= 80) {
+                grade = 'A+';
+            } else if (percentage >= 70) {
+                grade = 'A';
+            } else if (percentage >= 60) {
+                grade = 'B';
+            } else if (percentage >= 50) {
+                grade = 'C';
+            } else {
+                grade = 'Fail';
+            }
+
+            document.getElementById('result').innerHTML = `
+             <strong>Name:</strong> ${name} <br>
+             <strong>Total Marks:</strong> ${total}/550 <br>
+             <strong>Percentage:</strong> ${percentage.toFixed(2)}% <br>
+             <strong>Grade:</strong> ${grade}
+             `;
+        }
+
+           function clearMarksheet() {
+            document.getElementById('name').value = '';
+            document.getElementById('english').value = '';
+            document.getElementById('math').value = '';
+            document.getElementById('chemistry').value = '';
+            document.getElementById('urdu').value = '';
+            document.getElementById('physics').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+
+</body>
+
+</html>
